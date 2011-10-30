@@ -1,0 +1,52 @@
+/*
+ * Copyright (C) 2011 Nicki, Bulgaria.
+ *
+ * See the LICENSE file for terms of use.
+*/
+
+
+#ifndef DRESS_H
+#define DRESS_H
+
+#include <string>
+#include <Wt/Dbo/Types>
+#include "collection.h"
+#include "category.h"
+#include "image.h"
+#include "video.h"
+
+class Image;
+class Video;
+class Category;
+class Collection;
+
+namespace dbo = Wt::Dbo;
+
+typedef dbo::collection<dbo::ptr<Image> > Images;
+typedef dbo::collection<dbo::ptr<Video> > Videos;
+
+class Dress
+{
+public:
+  std::string name;
+  std::string description;
+  dbo::ptr<Category> category;
+  dbo::ptr<Collection> collection;
+  Images images;
+  Videos videos;
+  
+  template<class Action> 
+  void persist(Action& a)
+  {
+    dbo::field(a, name, "name");
+    dbo::field(a, description, "description");
+    dbo::belongsTo(a, category, "category");
+    dbo::belongsTo(a, collection, "collection");
+    dbo::hasMany(a, images, dbo::ManyToOne, "dress");
+    dbo::hasMany(a, videos, dbo::ManyToOne, "dress");
+  }
+};
+
+DBO_EXTERN_TEMPLATES(Dress);
+
+#endif // DRESS_H

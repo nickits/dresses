@@ -1,0 +1,125 @@
+﻿<ul id='menu'>
+    <li><a href='javascript:;' id='chain-call'>call chain</a></li>
+    <li><a href='javascript:;' id='multiple-flag'>toggle multiple</a></li>
+    <li>
+        <a href='javascript:;' id='debug-flag'>toggle debug</a>
+        <em>NOTE: debug uses <code>console.log</code></em>
+    </li>
+</ul>
+<ul id='root'>
+    <li>
+        <a href='javascript:;' class='acord-handle'>COLLECTIONS</a>
+        <ul class='branch' id='a'>
+            <li>
+                <a href='javascript:;' class="acord-handle">Anelia</a>
+            </li>
+            <li>
+                <a href='javascript:;' class="acord-handle">Tania</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href='javascript:;' class='acord-handle'>CATEGORIES</a>
+        <ul class='branch' id='b'>
+            <li><a href='javascript:;' class='acord-handle'>Category1</a>
+                <ul id="g" class="branch">
+                    <li>Category11</li>
+                </ul>
+            </li>
+            <li>
+                <a href='javascript:;' class='acord-handle'>Category2</a>
+                <ul class='branch' id='h'>
+                    <li><a href='javascript:;' class='acord-handle'>Category21</a>
+                        <ul class='branch' id='j' >
+                            <li>
+                                <a href='javascript:;' class="acord-handle">Category211</a>
+                                <ul id="l" class="branch">
+                                    <li>Category2111</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href='javascript:;' class='acord-handle'>Category22</a>
+                        <ul class='branch' id='k'>
+                            <li>
+                                <a href='javascript:;' class="acord-handle">Category221</a>
+                                <ul id="m" class="branch">
+                                    <li>Category2211</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script type='text/javascript' src='http://github.com/arieh/MooTreeAcordion/raw/master/Source/tree-acordion.js'></script>
+<script type='text/javascript' src='http://github.com/arieh/FunctionStack/raw/master/Source/FunctionStack.js'></script>
+​
+
+
+
+
+
+
+
+
+var _debug=false,
+        _multiple=true,
+        list = new TreeAcordion('root',{multiple:_multiple,debug:_debug});
+    toggle($('a'));
+    
+    $('multiple-flag').addEvent('click',function(){
+        if (_multiple) _multiple = false;
+        else _multiple = true;
+        list.setMultiple(_multiple);
+    });
+    
+    $('debug-flag').addEvent('click',function(){
+        if (_debug) _debug = false;
+        else _debug = true;
+        list.setDebug(_debug);
+    });
+    
+    function toggle(el){
+        list.toggleBranch(el);
+        return this;
+    }
+    
+    var FS = new FunctionStack(
+        function(){toggle($('a'))},
+        function(){toggle($('c'))},
+        function(){toggle($('d'))},
+        function(){toggle($('b'))},
+        function(){toggle($('g'))},
+        function(){toggle($('h'))},
+        function(){toggle($('j'))},
+        function(){toggle($('l'))},
+        function(){toggle($('k'))},
+        function(){toggle($('m'))},
+        function(){toggle($('g'))},
+        function(){toggle($('a'))},
+        function(){toggle($('a'))}
+    );
+    
+    $('chain-call').addEvent('click',function(){
+        FS.reset();
+        
+        FS.play(700);
+    });​
+
+
+
+
+
+
+
+
+ul{list-style-type:none inside; background-color:#000;}
+li{margin:0;padding:0; color:#fff;}
+#root{width:200px; padding:0;}
+ul.branch {display:none;padding-left:10px !important;}
+.acord-handle{cursor:pointer;display:block; width:100%; height:20px;color:#fff;text-decoration:none}
+.acord-handle:hover{cursor:pointer;display:block; width:100%; height:20px;color:#aaa;text-decoration:none}
+​

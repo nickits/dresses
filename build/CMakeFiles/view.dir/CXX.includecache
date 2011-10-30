@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nicki/projects/dresses/templates/admin.cpp
+admin.h
+/home/nicki/projects/dresses/templates/admin.h
+
+/home/nicki/projects/dresses/templates/admin.h
+cppcms/view.h
+-
+string
+-
+
+/home/nicki/projects/dresses/templates/content1.cpp
+content1.h
+/home/nicki/projects/dresses/templates/content1.h
+
+/home/nicki/projects/dresses/templates/content1.h
+cppcms/view.h
+-
+string
+-
+
+/home/nicki/projects/dresses/templates/content2.cpp
+content2.h
+/home/nicki/projects/dresses/templates/content2.h
+
+/home/nicki/projects/dresses/templates/content2.h
+cppcms/view.h
+-
+string
+-
+

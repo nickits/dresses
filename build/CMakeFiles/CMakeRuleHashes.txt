@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+cbfaf667b4746850ff90a8e710f340e2 ../templates/admin.cpp
+22ae0370c68cdaa4a83a4f0edb7c2d5e ../templates/content1.cpp
+8ead4eca844e865e016da79f486d511d ../templates/content2.cpp
