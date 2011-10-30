@@ -5,7 +5,7 @@ LDFLAGS = -Wall -ansi -pedantic -frepo
 
 LIBS= -lcppcms -lbooster -lwtdbosqlite3
 
-SOURCES_MAIN=dresses.cpp datasession.cpp 
+SOURCES_MAIN=dresses.cpp datasession.cpp
 
 SOURCES_MODELS=	model/product.cpp \
 		model/category.cpp \
