@@ -3,7 +3,7 @@ DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG) -m32
 LDFLAGS = -Wall -ansi -pedantic -frepo
 
-LIBS= -lcppcms -lbooster -lwtdbosqlite3
+LIBS= -lcppcms -lbooster -lwtdbosqlite3 
 
 SOURCES_MAIN=dresses.cpp datasession.cpp
 
