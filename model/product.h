@@ -40,6 +40,7 @@ public:
 	dbo::ptr<Collection> collection;
 	Images images;
 	Videos videos;
+	OwnerProducts ownerProducts;
 
 	template<class Action> 
 	void persist(Action& a)
@@ -65,6 +66,7 @@ public:
 		dbo::belongsTo(a, collection, "collection");
 		dbo::hasMany(a, images, dbo::ManyToOne, "dress");
 		dbo::hasMany(a, videos, dbo::ManyToOne, "dress");
+		dbo::hasMany(a, ownerProducts, dbo::ManyToOne, "product");
 	}
 };
 

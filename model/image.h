@@ -18,20 +18,22 @@ class Image
 {
 public:
   std::string name;
-  std::string path;
-  std::string pathThumb;
-  std::string pathSmall;
-  std::string pathMedium;
+  std::string description;
+  std::string url;
+  std::string urlThumb;
+  std::string urlSmall;
+  std::string urlMedium;
   dbo::ptr<Product> product;
   
   template<class Action> 
   void persist(Action& a)
   {
     dbo::field(a, name, "name");
-    dbo::field(a, path, "path");
-    dbo::field(a, pathThumb, "pathThumb");
-    dbo::field(a, pathSmall, "pathSmall");
-    dbo::field(a, pathMedium, "pathMedium");
+    dbo::field(a, description, "description");	
+    dbo::field(a, url, "url");
+    dbo::field(a, urlThumb, "urlThumb");
+    dbo::field(a, urlSmall, "urlSmall");
+    dbo::field(a, urlMedium, "urlMedium");
     dbo::belongsTo(a, product, "product");
   }
 };

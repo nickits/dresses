@@ -14,20 +14,20 @@
 #include "product.h"
 #include "defines.h"
 
-namespace dbo = Wt::Dbo;
-
 class Video
 {
 public:
   std::string name;
-  std::string path;
+  std::string description;
+  std::string url;
   dbo::ptr<Product> product;
   
   template<class Action> 
   void persist(Action& a)
   {
     dbo::field(a, name, "name");
-    dbo::field(a, path, "path");
+    dbo::field(a, description, "description");	
+    dbo::field(a, url, "url");
     dbo::belongsTo(a, product, "product");
   }
 };
