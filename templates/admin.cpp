@@ -1,22 +1,22 @@
-#line 1 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 1 "templates/admin.tmpl"
 #include "admin.h" 
-#line 2 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 2 "templates/admin.tmpl"
 namespace skinback {
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 	struct admin :public cppcms::base_view
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 	{
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 		back::admin &content;
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 		admin(std::ostream &_s,back::admin &_content): cppcms::base_view(_s),content(_content)
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 		{
-	#line 3 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 3 "templates/admin.tmpl"
 		}
-		#line 4 "/home/nicki/projects/dresses/templates/admin.tmpl"
+		#line 4 "templates/admin.tmpl"
 		virtual void render() {
-			#line 20 "/home/nicki/projects/dresses/templates/admin.tmpl"
+			#line 20 "templates/admin.tmpl"
 			out()<<"\n"
 				"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
 				"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -34,9 +34,9 @@ namespace skinback {
 				"\t<script type=\"text/javascript\" src=\"/js/admin/forms.js\"></script>\n"
 				"\t<script type=\"text/javascript\">\n"
 				"\t\tvar entity = \"";
-			#line 20 "/home/nicki/projects/dresses/templates/admin.tmpl"
+			#line 20 "templates/admin.tmpl"
 			out()<<cppcms::filters::escape(content.entity);
-			#line 70 "/home/nicki/projects/dresses/templates/admin.tmpl"
+			#line 70 "templates/admin.tmpl"
 			out()<<"\";\n"
 				"\t</script>\n"
 				"\n"
@@ -88,29 +88,29 @@ namespace skinback {
 				"</body>\n"
 				"</html>\n"
 				"";
-		#line 70 "/home/nicki/projects/dresses/templates/admin.tmpl"
+		#line 70 "templates/admin.tmpl"
 		} // end of template render
-	#line 71 "/home/nicki/projects/dresses/templates/admin.tmpl"
+	#line 71 "templates/admin.tmpl"
 	}; // end of class admin
-#line 72 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 72 "templates/admin.tmpl"
 } // end of namespace skinback
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
 namespace {
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
  struct loader { 
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
   loader() { 
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
     cppcms::views_pool::mapping_type mapping;
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
    mapping["admin"]=&cppcms::views_pool::view_builder<skinback::admin,back::admin>;
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
     cppcms::views_pool::static_instance().add_view("skinback",mapping); 
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
  }
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
  ~loader() {  cppcms::views_pool::static_instance().remove_view("skinback"); }
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
 } a_loader;
-#line 73 "/home/nicki/projects/dresses/templates/admin.tmpl"
+#line 73 "templates/admin.tmpl"
 } // anon 

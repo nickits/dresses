@@ -19,6 +19,9 @@ class Image
 public:
   std::string name;
   std::string path;
+  std::string pathThumb;
+  std::string pathSmall;
+  std::string pathMedium;
   dbo::ptr<Product> product;
   
   template<class Action> 
@@ -26,6 +29,9 @@ public:
   {
     dbo::field(a, name, "name");
     dbo::field(a, path, "path");
+    dbo::field(a, pathThumb, "pathThumb");
+    dbo::field(a, pathSmall, "pathSmall");
+    dbo::field(a, pathMedium, "pathMedium");
     dbo::belongsTo(a, product, "product");
   }
 };

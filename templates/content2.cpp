@@ -1,22 +1,22 @@
-#line 1 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 1 "templates/content2.tmpl"
 #include "content2.h" 
-#line 2 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 2 "templates/content2.tmpl"
 namespace skinfront {
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 	struct content2 :public cppcms::base_view
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 	{
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 		front::content &content;
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 		content2(std::ostream &_s,front::content &_content): cppcms::base_view(_s),content(_content)
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 		{
-	#line 3 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 3 "templates/content2.tmpl"
 		}
-		#line 4 "/home/nicki/projects/dresses/templates/content2.tmpl"
+		#line 4 "templates/content2.tmpl"
 		virtual void render() {
-			#line 14 "/home/nicki/projects/dresses/templates/content2.tmpl"
+			#line 14 "templates/content2.tmpl"
 			out()<<"\n"
 				"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
 				"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -28,9 +28,9 @@ namespace skinfront {
 				"</head>\n"
 				"<body>\n"
 				"<div>";
-			#line 14 "/home/nicki/projects/dresses/templates/content2.tmpl"
+			#line 14 "templates/content2.tmpl"
 			out()<<cppcms::filters::escape(content.text);
-			#line 77 "/home/nicki/projects/dresses/templates/content2.tmpl"
+			#line 77 "templates/content2.tmpl"
 			out()<<"</div>\n"
 				"\t<div id=\"page\" align=\"center\">\n"
 				"\t\t<div id=\"content\" style=\"width:800px\">\n"
@@ -95,29 +95,29 @@ namespace skinfront {
 				"</body>\n"
 				"</html>\n"
 				"";
-		#line 77 "/home/nicki/projects/dresses/templates/content2.tmpl"
+		#line 77 "templates/content2.tmpl"
 		} // end of template render
-	#line 78 "/home/nicki/projects/dresses/templates/content2.tmpl"
+	#line 78 "templates/content2.tmpl"
 	}; // end of class content2
-#line 79 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 79 "templates/content2.tmpl"
 } // end of namespace skinfront
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
 namespace {
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
  struct loader { 
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
   loader() { 
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
     cppcms::views_pool::mapping_type mapping;
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
    mapping["content2"]=&cppcms::views_pool::view_builder<skinfront::content2,front::content>;
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
     cppcms::views_pool::static_instance().add_view("skinfront",mapping); 
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
  }
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
  ~loader() {  cppcms::views_pool::static_instance().remove_view("skinfront"); }
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
 } a_loader;
-#line 80 "/home/nicki/projects/dresses/templates/content2.tmpl"
+#line 80 "templates/content2.tmpl"
 } // anon 

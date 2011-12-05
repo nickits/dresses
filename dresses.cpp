@@ -100,10 +100,10 @@ void Dresses::test(std::string str)
     product->name = st.str();
     st1 << collAnelia->description << j;
     product->description = st1.str();
-    st2 << j << ".jpg";
-    product->mainImage = st2.str();
-    st3 << j << "-m.jpg";
-    product->mainImageThumb = st3.str();
+//     st2 << j << ".jpg";
+//     product->mainImage = st2.str();
+//     st3 << j << "-m.jpg";
+//     product->mainImageThumb = st3.str();
     
     product->collection = collAnelia;
     session_.add(product);
@@ -118,10 +118,10 @@ void Dresses::test(std::string str)
     product->name = st.str();
     st1 << collTania->description << k;
     product->description = st1.str();
-    st2 << j << ".jpg";
-    product->mainImage = st2.str();
-    st3 << j << "-m.jpg";
-    product->mainImageThumb = st3.str();
+//     st2 << j << ".jpg";
+//     product->mainImage = st2.str();
+//     st3 << j << "-m.jpg";
+//     product->mainImageThumb = st3.str();
     product->collection = collTania;
     session_.add(product);
     st.str("");
@@ -237,7 +237,7 @@ void Dresses::loadCollectionImages()
     {
       if(coll->products.size() > 0){
 	for(Products::const_iterator p = coll->products.begin(); p != coll->products.end(); p++){
-	    st << getImageString((*p)->mainImage, (*p)->mainImageThumb);
+//	    st << getImageString((*p)->mainImage, (*p)->mainImageThumb);
 	}
 	hasCollection = true;
       }
@@ -250,7 +250,7 @@ void Dresses::loadCollectionImages()
     {
       if(cat->products.size() > 0){
 	for(Products::const_iterator p = cat->products.begin(); p != cat->products.end(); p++){
-	    st << getImageString((*p)->mainImage, (*p)->mainImageThumb);
+//	    st << getImageString((*p)->mainImage, (*p)->mainImageThumb);
 	}
 	hasCollection = true;
       }     

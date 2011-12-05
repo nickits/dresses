@@ -1,6 +1,6 @@
 CC = g++
 DEBUG = -g
-CFLAGS = -Wall -c $(DEBUG) -m32
+CFLAGS = -Wall -c $(DEBUG) -m64
 LDFLAGS = -Wall -ansi -pedantic -frepo
 
 LIBS= -lcppcms -lbooster -lwtdbosqlite3

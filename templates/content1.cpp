@@ -1,22 +1,22 @@
-#line 1 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 1 "templates/content1.tmpl"
 #include "content1.h" 
-#line 2 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 2 "templates/content1.tmpl"
 namespace skinfront1 {
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 	struct content1 :public cppcms::base_view
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 	{
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 		front1::content1 &content;
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 		content1(std::ostream &_s,front1::content1 &_content): cppcms::base_view(_s),content(_content)
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 		{
-	#line 3 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 3 "templates/content1.tmpl"
 		}
-		#line 4 "/home/nicki/projects/dresses/templates/content1.tmpl"
+		#line 4 "templates/content1.tmpl"
 		virtual void render() {
-			#line 19 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 19 "templates/content1.tmpl"
 			out()<<"\n"
 				"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
 				"<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
@@ -33,9 +33,9 @@ namespace skinfront1 {
 				"\n"
 				"<script type='text/javascript'>\n"
 				"  var sellectionType = \"";
-			#line 19 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 19 "templates/content1.tmpl"
 			out()<<cppcms::filters::escape(content.sellectionType);
-			#line 40 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 40 "templates/content1.tmpl"
 			out()<<"\";\n"
 				"</script>\n"
 				"<title>Pomme</title>\n"
@@ -58,9 +58,9 @@ namespace skinfront1 {
 				"        <a href='javascript:;' class='acord-handle'>COLLECTIONS</a>\n"
 				"        <ul class='branch' id='collections'>\n"
 				"\t      ";
-			#line 40 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 40 "templates/content1.tmpl"
 			out()<<cppcms::filters::raw(content.collections);
-			#line 49 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 49 "templates/content1.tmpl"
 			out()<<"\n"
 				"        </ul>\n"
 				"    </li>\n"
@@ -71,9 +71,9 @@ namespace skinfront1 {
 				"            </li>\n"
 				"-->\n"
 				"\t      ";
-			#line 49 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 49 "templates/content1.tmpl"
 			out()<<cppcms::filters::raw(content.categories);
-			#line 80 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 80 "templates/content1.tmpl"
 			out()<<"\n"
 				"        </ul>\n"
 				"    </li>\n"
@@ -106,14 +106,14 @@ namespace skinfront1 {
 				"<div id=\"content\">\n"
 				"\n"
 				"<div>";
-			#line 80 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 80 "templates/content1.tmpl"
 			out()<<cppcms::filters::raw(content.collectionImages);
-			#line 81 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 81 "templates/content1.tmpl"
 			out()<<"</div>\n"
 				"<div>";
-			#line 81 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 81 "templates/content1.tmpl"
 			out()<<cppcms::filters::raw(content.productImage);
-			#line 91 "/home/nicki/projects/dresses/templates/content1.tmpl"
+			#line 91 "templates/content1.tmpl"
 			out()<<"</div>\n"
 				"\n"
 				"</div>\n"
@@ -125,29 +125,29 @@ namespace skinfront1 {
 				"</body>\n"
 				"</html>\n"
 				"";
-		#line 91 "/home/nicki/projects/dresses/templates/content1.tmpl"
+		#line 91 "templates/content1.tmpl"
 		} // end of template render
-	#line 92 "/home/nicki/projects/dresses/templates/content1.tmpl"
+	#line 92 "templates/content1.tmpl"
 	}; // end of class content1
-#line 93 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 93 "templates/content1.tmpl"
 } // end of namespace skinfront1
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
 namespace {
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
  struct loader { 
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
   loader() { 
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
     cppcms::views_pool::mapping_type mapping;
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
    mapping["content1"]=&cppcms::views_pool::view_builder<skinfront1::content1,front1::content1>;
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
     cppcms::views_pool::static_instance().add_view("skinfront1",mapping); 
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
  }
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
  ~loader() {  cppcms::views_pool::static_instance().remove_view("skinfront1"); }
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
 } a_loader;
-#line 94 "/home/nicki/projects/dresses/templates/content1.tmpl"
+#line 94 "templates/content1.tmpl"
 } // anon 
