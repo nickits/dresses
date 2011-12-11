@@ -9,9 +9,6 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "product.h"
 #include "defines.h"
 
 class Video

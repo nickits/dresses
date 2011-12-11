@@ -9,9 +9,6 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "product.h"
 #include "defines.h"
 
 class Image

@@ -9,12 +9,10 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <string>
-#include <Wt/Dbo/Types>
 #include "defines.h"
 
 enum ClientType{
-	Company,
+	Business,
 	Individual
 };
 
@@ -38,6 +36,8 @@ public:
 	std::string contactPerson;
 	double discount;
 	OwnerProducts ownerProducts;
+	Sales salles;
+	Sales buyes;
 	
   template<class Action> 
   void persist(Action& a)
@@ -59,6 +59,8 @@ public:
 	dbo::field(a, contactPerson, "contactPerson");
 	dbo::field(a, discount, "discount");
 	dbo::hasMany(a, ownerProducts, dbo::ManyToOne, "client");
+	dbo::hasMany(a, buyes, dbo::ManyToOne, "client");
+	dbo::hasMany(a, salles, dbo::ManyToOne, "saller");
   }
 };
 

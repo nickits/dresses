@@ -9,9 +9,6 @@
 #ifndef CATEGORY_H
 #define CATEGORY_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "product.h"
 #include "defines.h"
 
 class Category

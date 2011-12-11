@@ -9,9 +9,6 @@
 #ifndef COLLECTION_H
 #define COLLECTION_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "product.h"
 #include "defines.h"
 
 class Collection
@@ -30,5 +27,7 @@ public:
   }
 
 };
+
+DBO_EXTERN_TEMPLATES(Collection);
 
 #endif // COLLECTION_H

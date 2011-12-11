@@ -8,12 +8,6 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "collection.h"
-#include "category.h"
-#include "image.h"
-#include "video.h"
 #include "defines.h"
 
 class Product
@@ -41,12 +35,14 @@ public:
 	Images images;
 	Videos videos;
 	OwnerProducts ownerProducts;
+	ProductCharacteristics productCharacteristics;
+	SaleDetails saleDetails;
 
 	template<class Action> 
 	void persist(Action& a)
 	{
-		dbo::field(a, name, "namepr");
-		dbo::field(a, description, "descriptionpr");
+		dbo::field(a, name, "name");
+		dbo::field(a, description, "description");
 		dbo::field(a, shortDescription, "shortDescription");
 		dbo::field(a, idNumber, "idNumber");
 		dbo::belongsTo(a, image, "image");
@@ -64,9 +60,11 @@ public:
 		dbo::field(a, salePrice, "salePrice");
 		dbo::belongsTo(a, category, "category");
 		dbo::belongsTo(a, collection, "collection");
-		dbo::hasMany(a, images, dbo::ManyToOne, "dress");
-		dbo::hasMany(a, videos, dbo::ManyToOne, "dress");
+		dbo::hasMany(a, images, dbo::ManyToOne, "product");
+		dbo::hasMany(a, videos, dbo::ManyToOne, "product");
 		dbo::hasMany(a, ownerProducts, dbo::ManyToOne, "product");
+		dbo::hasMany(a, productCharacteristics, dbo::ManyToOne, "product");
+		dbo::hasMany(a, saleDetails, dbo::ManyToOne, "product");
 	}
 };
 

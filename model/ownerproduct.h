@@ -9,11 +9,7 @@
 #ifndef OWNERPRODUCT_H
 #define OWNERPRODUCT_H
 
-#include <string>
-#include <Wt/Dbo/Types>
-#include "product.h"
 #include "defines.h"
-#include "client.h"
 
 class OwnerProduct
 {
@@ -21,6 +17,7 @@ public:
 	dbo::ptr<Client> client;
 	dbo::ptr<Product> product;
 	double quantity;
+	double price;
   
   template<class Action> 
   void persist(Action& a)
@@ -28,6 +25,7 @@ public:
     dbo::belongsTo(a, product, "product");
     dbo::belongsTo(a, client, "client");
     dbo::field(a, quantity, "quantity");
+    dbo::field(a, price, "price");
   }
 };
 
