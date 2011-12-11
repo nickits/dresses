@@ -17,9 +17,7 @@
 #include "templates/content1.h"
 #include "templates/content2.h"
 #include "templates/admin.h"
-#include "model/category.h"
-#include "model/collection.h"
-#include "model/product.h"
+#include "model/defines.h"
 #include "utils/formgenerator.h"
 
 Dresses::Dresses(cppcms::service& srv): application(srv)

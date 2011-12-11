@@ -7,11 +7,7 @@
 */
 
 #include "datasession.h"
-#include "model/product.h"
-#include "model/category.h"
-#include "model/collection.h"
-#include "model/image.h"
-#include "model/video.h"
+#include "model/defines.h"
 #include <iostream>
 
 DataSession::DataSession(): connection_("dresses.db")
@@ -23,11 +19,23 @@ void DataSession::initialize()
 {
     setConnection(connection_);
     
-    mapClass<Product>("product");
-    mapClass<Category>("category");
-    mapClass<Collection>("collection");
-    mapClass<Image>("image");
-    mapClass<Video>("video");
+    mapClass<Product>("Product");
+    mapClass<Category>("Category");
+    mapClass<Collection>("Collection");
+    mapClass<Image>("Image");
+    mapClass<Video>("Video");
+    mapClass<Client>("Client");
+    mapClass<OwnerProduct>("OwnerProduct");
+    mapClass<SpecialOffer>("SpecialOffer");
+    mapClass<FeaturedProduct>("FeaturedProduct");
+    mapClass<Characteristic>("Characteristic");
+    mapClass<CharacteristicCategory>("CharacteristicCategory");
+    mapClass<ProductCharacteristic>("ProductCharacteristic");
+    mapClass<Company>("Company");
+    mapClass<Shop>("Shop");
+    mapClass<Sale>("Sale");
+    mapClass<Payment>("Payment");
+    mapClass<SaleDetail>("SaleDetail");
 
     try{
       dbo::Transaction t(*this);
@@ -39,8 +47,8 @@ void DataSession::initialize()
       std::cerr << "Database created";
     }
     catch(std::exception e){
-      //std::cerr << e.what() << std::endl;
-      std::cerr << "Using existing database";
+      std::cerr << e.what() << std::endl;
+      //std::cerr << "Using existing database";
     }
 }
 

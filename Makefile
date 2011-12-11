@@ -11,7 +11,19 @@ SOURCES_MODELS=	model/product.cpp \
 		model/category.cpp \
 		model/collection.cpp \
 		model/image.cpp \
-		model/video.cpp
+		model/video.cpp \
+		model/client.cpp \
+		model/ownerproduct.cpp \
+		model/characteristic.cpp \
+		model/characteristiccategory.cpp \
+		model/featuredproduct.cpp \
+		model/productcharacteristic.cpp \
+		model/specialoffer.cpp \
+		model/company.cpp \
+		model/shop.cpp \
+		model/sale.cpp \
+		model/payment.cpp \
+		model/saledetail.cpp
 
 SOURCES_UTILS=	utils/jsonutils.cpp \
 		utils/formgenerator.cpp

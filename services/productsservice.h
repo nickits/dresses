@@ -7,7 +7,6 @@
 #ifndef PRODUCTSSERVICE_H
 #define PRODUCTSSERVICE_H
 #include "baseservice.h"
-#include "../model/product.h"
 
 class ProductsService : public BaseService<Product>
 {

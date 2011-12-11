@@ -7,7 +7,6 @@
 
 #include "productpage.h"
 #include "../model/defines.h"
-#include "../model/product.h"
 #include "Wt/Dbo/Impl"
 #include "../utils/jsonutils.h"
 
