@@ -16,7 +16,7 @@ public:
 	std::string name;
 	std::string description;
 	std::string shortDescription;
-	dbo::ptr<CharacteristicCategory> category;
+	dbo::ptr<Category> category;
 	ProductCharacteristics productCharacteristics;
 
 	template<class Action> 

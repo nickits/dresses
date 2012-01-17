@@ -17,7 +17,8 @@ endif()
 
 find_library(CPPCMS cppcms)
 find_library(BOOSTER booster)
-find_library(CPPDB wtdbosqlite3)
+find_library(DBO wtdbo PATHS /usr/lib)
+find_library(SQLITE wtdbosqlite3 PATHS /usr/lib)
 
 find_program(TMPLCC cppcms_tmpl_cc)
 
@@ -42,6 +43,17 @@ set(SRC
 	model/collection.cpp
 	model/image.cpp
 	model/video.cpp
+	model/client.cpp
+	model/ownerproduct.cpp
+	model/characteristic.cpp
+	model/featuredproduct.cpp
+	model/productcharacteristic.cpp
+	model/specialoffer.cpp
+	model/company.cpp
+	model/shop.cpp
+	model/sale.cpp
+	model/payment.cpp
+	model/saledetail.cpp
 	utils/jsonutils.cpp
 	utils/formgenerator.cpp
 	services/productsservice.cpp
@@ -65,11 +77,11 @@ endforeach()
 
 if(USE_STATIC_VIEW)
 	add_executable(dresses ${SRC} ${TEMPLATE_TARGETS})
-	target_link_libraries(dresses ${BOOSTER} ${CPPCMS} ${CPPDB})
+	target_link_libraries(dresses ${BOOSTER} ${CPPCMS} ${DBO} ${SQLITE})
 else()
 	add_executable(dresses ${SRC})
 	add_library(view SHARED ${TEMPLATE_TARGETS})
-	target_link_libraries(dresses view ${BOOSTER} ${CPPCMS} ${CPPDB})
+	target_link_libraries(dresses view ${BOOSTER} ${CPPCMS} ${DBO} ${SQLITE})
 endif()
 
 

@@ -14,21 +14,23 @@
 class Category
 {
 public:
-  std::string name;
-  std::string description;
-  Categories children;
-  dbo::ptr<Category> parent;
-  Products products;
-  
-  template<class Action> 
-  void persist(Action& a)
-  {
-    dbo::field(a, name, "name");
-    dbo::field(a, description, "description");
-    dbo::hasMany(a, children, dbo::ManyToOne, "parent");
-    dbo::belongsTo(a, parent, "parent");
-    dbo::hasMany(a, products, dbo::ManyToOne, "category");
-  }
+	std::string name;
+	std::string description;
+	Categories children;
+	dbo::ptr<Category> parent;
+	Products products;
+	Characteristics characteristics;
+
+	template<class Action> 
+	void persist(Action& a)
+	{
+		dbo::field(a, name, "name");
+		dbo::field(a, description, "description");
+		dbo::hasMany(a, children, dbo::ManyToOne, "parent");
+		dbo::belongsTo(a, parent, "parent");
+		dbo::hasMany(a, products, dbo::ManyToOne, "category");
+		dbo::hasMany(a, characteristics, dbo::ManyToOne, "category");
+	}
   
 };
 

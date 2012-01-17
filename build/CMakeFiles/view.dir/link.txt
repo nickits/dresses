@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O2 -g   -shared -Wl,-soname,libview.so -o libview.so CMakeFiles/view.dir/templates/admin.cpp.o CMakeFiles/view.dir/templates/content1.cpp.o CMakeFiles/view.dir/templates/content2.cpp.o 

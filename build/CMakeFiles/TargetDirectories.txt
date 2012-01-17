@@ -1,2 +1,0 @@
-/home/nicki/projects/dresses/build/CMakeFiles/dresses.dir
-/home/nicki/projects/dresses/build/CMakeFiles/view.dir

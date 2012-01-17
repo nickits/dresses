@@ -3,7 +3,7 @@ DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG) -m64
 LDFLAGS = -Wall -ansi -pedantic -frepo
 
-LIBS= -lcppcms -lbooster -lwtdbosqlite3
+LIBS= -lcppcms -lbooster -lwtdbo -lwtdbosqlite3
 
 SOURCES_MAIN=dresses.cpp datasession.cpp
 
@@ -15,7 +15,6 @@ SOURCES_MODELS=	model/product.cpp \
 		model/client.cpp \
 		model/ownerproduct.cpp \
 		model/characteristic.cpp \
-		model/characteristiccategory.cpp \
 		model/featuredproduct.cpp \
 		model/productcharacteristic.cpp \
 		model/specialoffer.cpp \

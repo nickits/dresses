@@ -29,7 +29,6 @@ void DataSession::initialize()
     mapClass<SpecialOffer>("SpecialOffer");
     mapClass<FeaturedProduct>("FeaturedProduct");
     mapClass<Characteristic>("Characteristic");
-    mapClass<CharacteristicCategory>("CharacteristicCategory");
     mapClass<ProductCharacteristic>("ProductCharacteristic");
     mapClass<Company>("Company");
     mapClass<Shop>("Shop");

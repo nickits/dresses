@@ -97,19 +97,21 @@ namespace skinback {
 #line 73 "templates/admin.tmpl"
 namespace {
 #line 73 "templates/admin.tmpl"
+ cppcms::views::generator my_generator; 
+#line 73 "templates/admin.tmpl"
  struct loader { 
 #line 73 "templates/admin.tmpl"
   loader() { 
 #line 73 "templates/admin.tmpl"
-    cppcms::views_pool::mapping_type mapping;
+   my_generator.name("skinback");
 #line 73 "templates/admin.tmpl"
-   mapping["admin"]=&cppcms::views_pool::view_builder<skinback::admin,back::admin>;
+   my_generator.add_view<skinback::admin,back::admin>("admin",true);
 #line 73 "templates/admin.tmpl"
-    cppcms::views_pool::static_instance().add_view("skinback",mapping); 
+    cppcms::views::pool::instance().add(my_generator);
 #line 73 "templates/admin.tmpl"
  }
 #line 73 "templates/admin.tmpl"
- ~loader() {  cppcms::views_pool::static_instance().remove_view("skinback"); }
+ ~loader() {  cppcms::views::pool::instance().remove(my_generator); }
 #line 73 "templates/admin.tmpl"
 } a_loader;
 #line 73 "templates/admin.tmpl"

@@ -134,19 +134,21 @@ namespace skinfront1 {
 #line 94 "templates/content1.tmpl"
 namespace {
 #line 94 "templates/content1.tmpl"
+ cppcms::views::generator my_generator; 
+#line 94 "templates/content1.tmpl"
  struct loader { 
 #line 94 "templates/content1.tmpl"
   loader() { 
 #line 94 "templates/content1.tmpl"
-    cppcms::views_pool::mapping_type mapping;
+   my_generator.name("skinfront1");
 #line 94 "templates/content1.tmpl"
-   mapping["content1"]=&cppcms::views_pool::view_builder<skinfront1::content1,front1::content1>;
+   my_generator.add_view<skinfront1::content1,front1::content1>("content1",true);
 #line 94 "templates/content1.tmpl"
-    cppcms::views_pool::static_instance().add_view("skinfront1",mapping); 
+    cppcms::views::pool::instance().add(my_generator);
 #line 94 "templates/content1.tmpl"
  }
 #line 94 "templates/content1.tmpl"
- ~loader() {  cppcms::views_pool::static_instance().remove_view("skinfront1"); }
+ ~loader() {  cppcms::views::pool::instance().remove(my_generator); }
 #line 94 "templates/content1.tmpl"
 } a_loader;
 #line 94 "templates/content1.tmpl"

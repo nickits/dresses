@@ -15,7 +15,6 @@ typedef std::pair<std::string, void*> PairAny;
 #include "client.h"
 #include "ownerproduct.h"
 #include "characteristic.h"
-#include "characteristiccategory.h"
 #include "featuredproduct.h"
 #include "productcharacteristic.h"
 #include "specialoffer.h"
@@ -35,7 +34,6 @@ class OwnerProduct;
 class SpecialOffer;
 class FeaturedProduct;
 class Characteristic;
-class CharacteristicCategory;
 class ProductCharacteristic;
 class Company;
 class Shop;
@@ -54,7 +52,6 @@ typedef dbo::collection<dbo::ptr<OwnerProduct> > OwnerProducts;
 typedef dbo::collection<dbo::ptr<SpecialOffer> > SpecialOffers;
 typedef dbo::collection<dbo::ptr<FeaturedProduct> > FeaturedProducts;
 typedef dbo::collection<dbo::ptr<Characteristic> > Characteristics;
-typedef dbo::collection<dbo::ptr<CharacteristicCategory> > CharacteristicCategories;
 typedef dbo::collection<dbo::ptr<ProductCharacteristic> > ProductCharacteristics;
 typedef dbo::collection<dbo::ptr<Company> > Companies;
 typedef dbo::collection<dbo::ptr<Shop> > Shops;
