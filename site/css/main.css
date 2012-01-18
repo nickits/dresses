@@ -71,10 +71,12 @@ body{
 }
 #footer{
 	clear: both;	
+	border-top: solid 1px gray;;
+	border-bottom: solid 1px gray;
+	background: url("img/footer_bg.jpg") center center repeat-x;
+	width: 100%;
+	height: 66px;
 }	
 #footer1{
 	clear: both;	
 }	
-#footer2{
-	clear: both;	
-}
