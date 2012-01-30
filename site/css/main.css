@@ -9,7 +9,7 @@ body{
 	margin: 0;	
 }
 #wrapper{
-	width: 1000px;
+	width: 1020px;
 	margin: 0 auto;
 }
 #header{
@@ -51,23 +51,117 @@ body{
 	text-transform: uppercase;
 	border-bottom: solid 1px white;
 	clear: both;
-	padding: 4px	
+	padding: 0 0 0 5px;
+	overflow: visible;	
+	height: 14px;
 }
-#main{
-	clear: both;	
+
+#menu > ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
-#left{
-	width: 150px;
+
+.menuItem{
 	float: left;
 }
-#center{
-	
+
+.mainLink{
+	padding: 0 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.mainLink:hover{
+	color: red;
+}
+
+.menuItemContainer{
+	display: none;
+	padding: 5px 15px 5px 15px;
+	overflow: auto;
+	border: 1px solid grey;
+	z-index: 100;
+	position: absolute;
+	background-color: #003;
+	opacity: 0.9;
+}
+
+.menuItemContainer a{
+	text-decoration: none;
+	color: white;
+}
+
+.menuItemContainer a:hover{
+	color: red;
+}
+
+.menuItemColumn{
+	float: left;
+}
+
+.menuItemColumn ul{
+	list-style: none;
+	padding: 0;
+}
+
+.vDivider{
+	float: left;
+	width: 1px;
+	height: 120px;
+	background-color: grey;
+	margin: 3px 15px 0 15px;
+	overflow: auto;
+	display: block;
+}
+
+.show{
+	display: block;
+}
+
+.active{
+	color: red;
+}
+
+#breadcrumb{
+	border-bottom: 1px solid #999;
+	height: 18px;
+	line-height: 18px;
+	font-size: 10px;
+	padding: 0 0 0 10px;
+	background-color: white;
+	color: #999;
+	clear: both;
+}
+#breadcrumb .devider{
+	padding: 0 0 0 3px;
+	margin: 0;
+}
+#breadcrumb a{
+	color: #999;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
 }
 #content{
+	background-color: white;
+	clear: both;
+	color: #003;
+	overflow: auto;	
+}
+#left{
+	width: 204px;
+	float: left;
+	text-transform: uppercase;
+}
+#center{
+	float: left;
+	width: 816px;
 }
 #right{
-	width: 150px;
+	width: 0px;
 	float: right;	
+	overflow: hidden;
 }
 #footer{
 	clear: both;	
