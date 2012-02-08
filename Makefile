@@ -33,11 +33,17 @@ SOURCES_SERVICES=	services/productsservice.cpp
 SOURCES_PAGES=	pages/basepage.cpp \
 		pages/productpage.cpp
 
-SOURCES_TEMPLATES =	templates/content1.cpp \
- 			templates/content2.cpp \
- 			templates/admin.cpp
+SOURCES_APPS=	apps/master.cpp \
+		apps/list.cpp \
+		apps/details.cpp
 
-SOURCES=$(SOURCES_MAIN) $(SOURCES_MODELS) $(SOURCES_UTILS) $(SOURCES_SERVICES) $(SOURCES_PAGES) $(SOURCES_TEMPLATES)
+SOURCES_TPL_CPP_VIEW = view/view.cpp
+
+SOURCES_TPL_VIEW = 	view/master.tmpl \
+			view/list.tmpl \
+			view/details.tmpl
+
+SOURCES=$(SOURCES_MAIN) $(SOURCES_APPS) $(SOURCES_MODELS) $(SOURCES_UTILS) $(SOURCES_SERVICES) $(SOURCES_PAGES) $(SOURCES_TPL_CPP_VIEW)
 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=dresses
@@ -50,11 +56,14 @@ $(EXECUTABLE): $(OBJECTS)
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
-%.cpp: %.tmpl
-	cppcms_tmpl_cc $< -o $@
+$(SOURCES_TPL_CPP_VIEW): 
+	cppcms_tmpl_cc $(SOURCES_TPL_VIEW) -o $(SOURCES_TPL_CPP_VIEW)
+
+#%.cpp: %.tmpl
+#	cppcms_tmpl_cc $< -o $@
 
 # templates/content.cpp: templates/content.tmpl templates/content.h
 # 	cppcms_tmpl_cc templates/content.tmpl -o templates/content.cpp
 
 clean:
-	rm -fr dresses *.so *.o ./*/*.o ./templates/*.cpp cppcms_rundir
+	rm -fr dresses *.so *.o ./*/*.o ./view/*.cpp cppcms_rundir

@@ -1,0 +1,249 @@
+<% c++ #include "../data/data.h" %>
+<% xhtml %>
+<% skin %>
+<% view master uses data::master %>
+
+<% template title() %>
+	<% if not empty title %>  
+		<%= title %>   
+	<% else %>  
+		<% gt "Dresses"  %>
+	<% end %>  
+<% end template %>
+<% template header_more() %><% end %>
+
+<% template header() %>
+<title><% include title() %></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/css/main.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="/js/mootools-core.js"></script>
+	<% include header_more() %>
+	<script type="text/javascript">
+		window.addEvent("domready", function(){
+			var menuItems = $$("li.menuItem");
+			Array.each(menuItems, function(item, index){
+				item.addEvent("mouseover", function(){
+					var sp = this.getElements("span.mainLink");
+					if(sp.length > 0){ sp[0].addClass("active"); }
+					var divs = this.getElements("div.menuItemContainer");
+					if(divs.length > 0){ divs[0].addClass("show"); }
+				});			
+				item.addEvent("mouseout", function(){
+					var sp = this.getElements("span.mainLink");
+					if(sp.length > 0){ sp[0].removeClass("active"); }
+					var divs = this.getElements("div.menuItemContainer");
+					if(divs.length > 0){ divs[0].removeClass("show"); }
+				});
+				item.addEvent("click", function(){
+					var items = $$("li.menuItem");
+					Array.each(items, function(item, index){				
+						item.removeClass("active"); 
+					});
+					this.addClass("active"); 
+				});
+			});
+		});
+	</script>
+<% end template %>
+
+<% template render() %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<% include header() %>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="message">some message</div>		
+			<div class="title">some title may be picture</div>		
+			<div class="account">
+				<div class="basket">basket ></div> 
+				<div class="itemcount">123</div> 
+				<div class="login">login</div>
+			</div>		
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="menuItem">
+					<span class="mainLink">Main Category 1</span>
+					<div class="menuItemContainer">
+						<div class="menuItemColumn">
+							<ul>
+								<li><div class="parentCategory"><a href="#" >Category 1</a></div></li>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+							</ul>
+						</div>
+					</div>				
+				</li>
+				<li class="menuItem">
+					<span class="mainLink">Main Category 2</span>
+					<div class="menuItemContainer">
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+							</ul>
+						</div>
+					</div>				
+				</li>
+				<li class="menuItem">
+					<span class="mainLink">Main Category 3</span>
+					<div class="menuItemContainer">
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+							</ul>
+						</div>
+					</div>				
+				</li>
+				<li class="menuItem">
+					<span class="mainLink">Main Category 4</span>
+					<div class="menuItemContainer">
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+								<li><a href="#" >Category Item 7</a></li>						
+								<li><a href="#" >Category Item 8</a></li>						
+								<li><a href="#" >Category Item 9</a></li>						
+							</ul>
+						</div>
+						<div class="vDivider"></div>
+						<div class="menuItemColumn">
+							<ul>
+								<li><a href="#" >Category Item 1</a></li>						
+								<li><a href="#" >Category Item 2</a></li>						
+								<li><a href="#" >Category Item 3</a></li>						
+								<li><a href="#" >Category Item 4</a></li>						
+								<li><a href="#" >Category Item 5</a></li>						
+								<li><a href="#" >Category Item 6</a></li>						
+							</ul>
+						</div>
+					</div>				
+				</li>
+			</ul>		
+		</div>	
+		<div id="breadcrumb">
+			<a href="#" title="path1">path1</a><span class="devider">></span>
+			<a href="#" title="path2">path2</a><span class="devider">></span>
+			<a href="#" title="path3">path3</a><span class="devider">></span>
+			<a href="#" title="path4">path4</a>		
+		</div>	
+		<div id="content">
+			<% include content_data() %>
+		</div>	
+		<div id="footer">fast links</div>	
+		<div id="footer1">footer1</div>	
+	</div>
+</body>
+</html>
+<% end template %>
+
+<% template content_data() %><p>content</p><% end %>
+<% end view %>
+<% end skin %>
+

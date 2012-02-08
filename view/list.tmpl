@@ -1,0 +1,33 @@
+<% c++ #include "../data/data.h" %>
+<% skin %>
+<% view list uses data::list extends master %>
+<% template header_more() %>
+	<link href="/css/list.css" type="text/css" rel="stylesheet" />
+<% end %>
+
+<% template content_data() %>
+			<div id="left">Select criteria</div>
+			<div id="center">
+				<div class="listtitle">Item list</div>	
+				<% foreach item_ in items %>  
+					<% item %>
+						<div class="listitem">
+							<div class="listimg">
+								<a href="<%= item_.url | urlencode %>" >
+									<img src="<%= item_.imgSrc %>" alt="<%= item_.imgAlt %>" />
+								</a>
+							</div>
+							<div class="listdesc">
+								<div class="listprice"><%= item_.price %></div>
+								<div class="listshortdesc"><%= item_.shortDescription %></div>
+							</div>
+						</div>			
+					<% end %>  
+				<% end %>  
+			</div>
+			<div id="right"></div>					
+<% end template %>
+
+
+<% end view %>
+<% end skin %>
