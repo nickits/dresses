@@ -25,23 +25,23 @@ void list::prepare_content(data::list &c,std::string const &id)
 	master::prepare(c);
 	c.title += " Selected category";
 	c.listTitle = "Selected category";
-	data::item item;
-	item.id = 0;
-	item.title = "Item title";
-	item.imgSrc = "/images/no_image.gif";
-	item.imgAlt = "Item image alt";
-	item.url = "item_url";
-	item.shortDescription = "Item short description";
-	item.price = "100.00";	
-	std::string item_url = "item_url";
+	data::details details;
+	details.id = 0;
+	details.title = "Item title";
+	details.imgSrc = "/images/no_image.gif";
+	details.imgAlt = "Item image alt";
+	details.url = "details";
+	details.shortDescription = "Item short description";
+	details.price = "100.00";	
+	std::string details_url = "details";
 	const std::string url_sep = "/";
 	std::stringstream ss;
 	for(int i = 1; i <= 10; i++){
-		item.id = i;
+		details.id = i;
 		ss.str("");
-		ss << item_url << url_sep << i;
-		item.url = ss.str();
-		c.items.push_back(item);	
+		ss << details_url << url_sep << i;
+		details.url = ss.str();
+		c.listDetails.push_back(details);	
 	}
 	
 	render("list",c);

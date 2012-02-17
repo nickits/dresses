@@ -21,8 +21,14 @@
 
 Dresses::Dresses(cppcms::service& srv): application(srv)
 {
-	attach(new apps::list(srv), "/(\\w+)/(\\w+)/(\\d+)", 3);
-	attach(new apps::details(srv), "/(\\w+)/(\\w+)/(\\w+)/(\\d+)", 4);
+	attach(new apps::list(srv), "/items/(\\d+)", 1);
+//	attach(new apps::list(srv), "/items/(\\w+)/(\\d+)", 2);
+//	attach(new apps::list(srv), "/items/(\\w+)/(\\w+)/(\\d+)", 3);
+//	attach(new apps::list(srv), "/items/(\\w+)/(\\w+)/(\\w+)/(\\d+)", 4);
+	attach(new apps::details(srv), "/item/(\\d+)", 1);
+//	attach(new apps::details(srv), "/item/(\\w+)/(\\w+)/(\\d+)", 3);
+//	attach(new apps::details(srv), "/item/(\\w+)/(\\w+)/(\\w+)/(\\d+)", 4);
+//	attach(new apps::details(srv), "/item/(\\w+)/(\\w+)/(\\w+)/(\\w+)/(\\d+)", 5);
 }
   
 int main(int argc,char ** argv)

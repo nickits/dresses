@@ -107,7 +107,7 @@ namespace None {
 				"";
 			#line 54 "view/master.tmpl"
 			header();
-			#line 237 "view/master.tmpl"
+			#line 243 "view/master.tmpl"
 			out()<<"\n"
 				"</head>\n"
 				"<body>\n"
@@ -282,7 +282,13 @@ namespace None {
 				"\t\t\t\t\t\t</div>\n"
 				"\t\t\t\t\t</div>\t\t\t\t\n"
 				"\t\t\t\t</li>\n"
-				"\t\t\t</ul>\t\t\n"
+				"\t\t\t</ul>\n"
+				"\t\t\t<div class=\"search\">\n"
+				"\t\t\t\t<form >\n"
+				"\t\t\t\t\t<label>Search:</label>\t\t\t\n"
+				"\t\t\t\t\t<input name=\"search\" type=\"text\"></input>\n"
+				"\t\t\t\t</form>\t\t\t\n"
+				"\t\t\t</div>\t\t\n"
 				"\t\t</div>\t\n"
 				"\t\t<div id=\"breadcrumb\">\n"
 				"\t\t\t<a href=\"#\" title=\"path1\">path1</a><span class=\"devider\">></span>\n"
@@ -292,9 +298,9 @@ namespace None {
 				"\t\t</div>\t\n"
 				"\t\t<div id=\"content\">\n"
 				"\t\t\t";
-			#line 237 "view/master.tmpl"
+			#line 243 "view/master.tmpl"
 			content_data();
-			#line 244 "view/master.tmpl"
+			#line 250 "view/master.tmpl"
 			out()<<"\n"
 				"\t\t</div>\t\n"
 				"\t\t<div id=\"footer\">fast links</div>\t\n"
@@ -303,17 +309,17 @@ namespace None {
 				"</body>\n"
 				"</html>\n"
 				"";
-		#line 244 "view/master.tmpl"
+		#line 250 "view/master.tmpl"
 		} // end of template render
-		#line 246 "view/master.tmpl"
+		#line 252 "view/master.tmpl"
 		virtual void content_data() {
-			#line 246 "view/master.tmpl"
+			#line 252 "view/master.tmpl"
 			out()<<"<p>content</p>";
-		#line 246 "view/master.tmpl"
+		#line 252 "view/master.tmpl"
 		} // end of template content_data
-	#line 247 "view/master.tmpl"
+	#line 253 "view/master.tmpl"
 	}; // end of class master
-#line 248 "view/master.tmpl"
+#line 254 "view/master.tmpl"
 } // end of namespace None
 #line 1 "view/list.tmpl"
 #include "../data/data.h" 
@@ -348,12 +354,12 @@ namespace None {
 				"\t\t\t\t<div class=\"listtitle\">Item list</div>\t\n"
 				"\t\t\t\t";
 			#line 12 "view/list.tmpl"
-			if((content.items).begin()!=(content.items).end()) {
+			if((content.listDetails).begin()!=(content.listDetails).end()) {
 				#line 13 "view/list.tmpl"
 				out()<<"  \n"
 					"\t\t\t\t\t";
 				#line 13 "view/list.tmpl"
-				for(CPPCMS_TYPEOF((content.items).begin()) item__ptr=(content.items).begin(),item__ptr_end=(content.items).end();item__ptr!=item__ptr_end;++item__ptr) {
+				for(CPPCMS_TYPEOF((content.listDetails).begin()) item__ptr=(content.listDetails).begin(),item__ptr_end=(content.listDetails).end();item__ptr!=item__ptr_end;++item__ptr) {
 				#line 13 "view/list.tmpl"
 				CPPCMS_TYPEOF(*item__ptr) &item_=*item__ptr;
 					#line 16 "view/list.tmpl"

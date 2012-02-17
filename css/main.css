@@ -47,13 +47,23 @@ body{
 	width: 80px;
 	float: right;
 }
+
 #menu{
-	text-transform: uppercase;
+	text-transform: none;
 	border-bottom: solid 1px white;
 	clear: both;
-	padding: 0 0 0 5px;
+	padding: 3px 0 0 5px;
 	overflow: visible;	
-	height: 14px;
+	height: 20px;
+}
+
+#menu .search{
+	float: right;
+	width: 200px;
+}
+
+#menu .search input{
+	height: 10px;
 }
 
 #menu > ul{
