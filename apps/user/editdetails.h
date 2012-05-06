@@ -5,19 +5,19 @@
 */
 
 
-#ifndef APPS_DETAILS_H
-#define APPS_DETAILS_H
+#ifndef APPS_EDITDETAILS_H
+#define APPS_EDITDETAILS_H
 
-#include "master.h"
-#include "../data/details.h"
+#include "usermaster.h"
+#include "../../data/details.h"
 
 namespace apps {
 
 
-	class details : public master{
+	class editdetails : public usermaster{
 	public:
 		
-		details(cppcms::service &s);
+		editdetails(cppcms::service &s);
 		void prepare(std::string page);
 	private:
 		void prepare_content(data::details &c,std::string const &page);

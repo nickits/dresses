@@ -5,21 +5,21 @@
 */
 
 
-#ifndef APPS_LIST_H
-#define APPS_LIST_H
+#ifndef APPS_USERITEMLIST_H
+#define APPS_USERITEMLIST_H
 
 #include <cppcms/application.h>
 
-#include "master.h"
-#include "../data/list.h"
+#include "usermaster.h"
+#include "../../data/list.h"
 
 namespace apps {
 
 
-	class list : public master{
+	class useritemslist : public usermaster{
 	public:
 		
-		list(cppcms::service &s);
+		useritemslist(cppcms::service &s);
 		void prepare(std::string id);
 	private:
 		void prepare_content(data::list &c,std::string const &id);

@@ -35,7 +35,12 @@ SOURCES_PAGES=	pages/basepage.cpp \
 
 SOURCES_APPS=	apps/master.cpp \
 		apps/list.cpp \
-		apps/details.cpp
+		apps/details.cpp \
+		apps/user/user.cpp \
+		apps/user/usermaster.cpp \
+		apps/user/editdetails.cpp \
+		apps/user/profile.cpp \
+		apps/user/useritemslist.cpp 
 
 SOURCES_TPL_CPP_VIEW = view/view.cpp
 
@@ -43,7 +48,14 @@ SOURCES_TPL_VIEW = 	view/master.tmpl \
 			view/list.tmpl \
 			view/details.tmpl
 
-SOURCES=$(SOURCES_MAIN) $(SOURCES_APPS) $(SOURCES_MODELS) $(SOURCES_UTILS) $(SOURCES_SERVICES) $(SOURCES_PAGES) $(SOURCES_TPL_CPP_VIEW)
+SOURCES_TPL_CPP_USERVIEW = view/user/userview.cpp
+
+SOURCES_TPL_USERVIEW = 	view/user/master.tmpl \
+			view/user/list.tmpl \
+			view/user/details.tmpl \
+			view/user/profile.tmpl
+
+SOURCES=$(SOURCES_MAIN) $(SOURCES_APPS) $(SOURCES_MODELS) $(SOURCES_UTILS) $(SOURCES_SERVICES) $(SOURCES_PAGES) $(SOURCES_TPL_CPP_VIEW) $(SOURCES_TPL_CPP_USERVIEW)
 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=dresses
@@ -59,6 +71,9 @@ $(EXECUTABLE): $(OBJECTS)
 $(SOURCES_TPL_CPP_VIEW): 
 	cppcms_tmpl_cc $(SOURCES_TPL_VIEW) -o $(SOURCES_TPL_CPP_VIEW)
 
+$(SOURCES_TPL_CPP_USERVIEW): 
+	cppcms_tmpl_cc $(SOURCES_TPL_USERVIEW) -o $(SOURCES_TPL_CPP_USERVIEW)
+
 #%.cpp: %.tmpl
 #	cppcms_tmpl_cc $< -o $@
 
@@ -66,4 +81,4 @@ $(SOURCES_TPL_CPP_VIEW):
 # 	cppcms_tmpl_cc templates/content.tmpl -o templates/content.cpp
 
 clean:
-	rm -fr dresses *.so *.o ./*/*.o ./view/*.cpp cppcms_rundir
+	rm -fr dresses *.so *.o ./*/*.o ./view/*.cpp ./view/user/*.cpp cppcms_rundir

@@ -1,7 +1,7 @@
 #line 1 "view/master.tmpl"
 #include "../data/data.h" 
 #line 3 "view/master.tmpl"
-namespace None {
+namespace mainskin {
 	#line 4 "view/master.tmpl"
 	struct master :public cppcms::base_view
 	#line 4 "view/master.tmpl"
@@ -320,11 +320,11 @@ namespace None {
 	#line 253 "view/master.tmpl"
 	}; // end of class master
 #line 254 "view/master.tmpl"
-} // end of namespace None
+} // end of namespace mainskin
 #line 1 "view/list.tmpl"
 #include "../data/data.h" 
 #line 2 "view/list.tmpl"
-namespace None {
+namespace mainskin {
 	#line 3 "view/list.tmpl"
 	struct list :public master
 	#line 3 "view/list.tmpl"
@@ -413,11 +413,11 @@ namespace None {
 	#line 32 "view/list.tmpl"
 	}; // end of class list
 #line 33 "view/list.tmpl"
-} // end of namespace None
+} // end of namespace mainskin
 #line 1 "view/details.tmpl"
 #include "../data/data.h" 
 #line 2 "view/details.tmpl"
-namespace None {
+namespace mainskin {
 	#line 3 "view/details.tmpl"
 	struct details :public master
 	#line 3 "view/details.tmpl"
@@ -488,7 +488,7 @@ namespace None {
 	#line 52 "view/details.tmpl"
 	}; // end of class details
 #line 53 "view/details.tmpl"
-} // end of namespace None
+} // end of namespace mainskin
 #line 54 "view/details.tmpl"
 namespace {
 #line 54 "view/details.tmpl"
@@ -498,13 +498,13 @@ namespace {
 #line 54 "view/details.tmpl"
   loader() { 
 #line 54 "view/details.tmpl"
-   my_generator.name("None");
+   my_generator.name("mainskin");
 #line 54 "view/details.tmpl"
-   my_generator.add_view<None::master,data::master>("master",true);
+   my_generator.add_view<mainskin::master,data::master>("master",true);
 #line 54 "view/details.tmpl"
-   my_generator.add_view<None::list,data::list>("list",true);
+   my_generator.add_view<mainskin::list,data::list>("list",true);
 #line 54 "view/details.tmpl"
-   my_generator.add_view<None::details,data::details>("details",true);
+   my_generator.add_view<mainskin::details,data::details>("details",true);
 #line 54 "view/details.tmpl"
     cppcms::views::pool::instance().add(my_generator);
 #line 54 "view/details.tmpl"

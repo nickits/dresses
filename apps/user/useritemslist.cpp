@@ -9,20 +9,20 @@
 #include <cppcms/session_interface.h>
 #include <cppcms/cache_interface.h>
 
-#include "list.h"
+#include "useritemslist.h"
 
 namespace apps {
 
-list::list(cppcms::service &srv) : master(srv)
+useritemslist::useritemslist(cppcms::service &srv) : usermaster(srv)
 {
 //  	mapper().assign("{1}"); // with id
 //  	mapper().assign("");    // default
- 	dispatcher().assign(".*", &list::prepare, this, 0);
+ 	dispatcher().assign(".*", &useritemslist::prepare, this, 0);
 }
 
-void list::prepare_content(data::list &c,std::string const &id)
+void useritemslist::prepare_content(data::list &c,std::string const &id)
 {
-	master::prepare(c);
+	usermaster::prepare(c);
 	c.title += " Selected category";
 	c.listTitle = "Selected category";
 	data::details details;
@@ -44,10 +44,10 @@ void list::prepare_content(data::list &c,std::string const &id)
 		c.listDetails.push_back(details);	
 	}
 	
-	render("list",c);
+	render("user", "useritemslist",c);
 }
 
-void list::prepare(std::string id)
+void useritemslist::prepare(std::string id)
 {
 	data::list c;
 	prepare_content(c,id);

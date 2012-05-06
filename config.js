@@ -6,9 +6,14 @@
 	    ]
 	},
 	"http" : {
-// 		"script" : "/dresses"
-		"script_names" : [ "/dresses", "/admin" ] 
-	  
+ 		"script" : "/dresses",
+//		"script_names" : [ "/dresses", "/admin" ] 
+		 "rewrite" : [  
+  			{ "regex" : "/css(/.*)?", "pattern" : "$0" },  
+  			{ "regex" : "/images(/.*)?", "pattern" : "$0" },  
+  			{ "regex" : "/js(/.*)?", "pattern" : "$0" },  
+ 			{ "regex" : ".*" , "pattern" : "/dresses$0" }  
+ 		]
 	},
 	"file_server" : {
 		"enable" : true,
@@ -16,7 +21,8 @@
 	},
 	"views" : {  
 		"paths" : [ "." ],  
-		"skins" : [ ]  
+		"skins" : [ ],
+		"default_skin" : "mainskin"
 	},
         "session" : {
                 "location" : "server",
