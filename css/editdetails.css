@@ -1,0 +1,37 @@
+#edit_details textarea, #edit_details input{
+	width: 100%;
+}
+#edit_details_pictures{
+	width: 500px;
+	overflow: auto;
+	float: left;
+	margin: 0px 5px 0px 0px;
+}
+#edit_details_info, #item_info{
+	width: 500px;
+	float: left;
+	margin: 0px 0px 0px 5px;
+	padding: 0 0 0 0;
+}
+.form_controls{
+	min-height: 300px;
+}
+.form_controls input, 
+.form_controls textarea{
+	color: black;
+	font-family: Georgia, Times, serif;
+	font-style:normal;
+}
+.form_buttons{
+	width: 100%;
+	text-align: right;
+}
+.form_buttons input{
+	min-width: 100px !important;
+	width: 100px !important;
+}
+.watermarkBlue{
+	color: blue  !important;
+	font-family: Georgia, Times, serif !important;
+	font-style:italic !important;
+}

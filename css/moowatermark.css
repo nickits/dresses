@@ -1,0 +1,20 @@
+/*
+---
+name: MooWatermark
+description: CSS class for the standard moowatermark hint
+
+authors:
+  - Magic Web Solutions (http://www.magicwebsolutions.co.uk)
+
+license:
+  - MIT-style
+
+provides:
+  - MooWatermark
+...
+*/
+
+.moowatermark {
+	color: gray;
+	font-style: italic;
+}

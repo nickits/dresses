@@ -1,0 +1,14 @@
+#profile_data td, #profile_data input{
+	min-width: 200px;
+}
+#profile_data input{
+	width: 400px;
+}
+.form_buttons{
+	width: 100%;
+	text-align: right;
+}
+.form_buttons input{
+	min-width: 100px !important;
+	width: 100px !important;
+}
