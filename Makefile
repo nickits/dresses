@@ -1,6 +1,6 @@
 CC = g++
 DEBUG = -g
-CFLAGS = -Wall -c $(DEBUG) -m64
+CFLAGS = -Wall -c $(DEBUG) -m32
 LDFLAGS = -Wall -ansi -pedantic -frepo
 
 LIBS= -lcppcms -lbooster -lwtdbo -lwtdbosqlite3
@@ -60,7 +60,7 @@ SOURCES=$(SOURCES_MAIN) $(SOURCES_APPS) $(SOURCES_MODELS) $(SOURCES_UTILS) $(SOU
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=dresses
 
-all: $(SOURCES) $(EXECUTABLE)
+all: clean_tmpl $(SOURCES) $(EXECUTABLE)
 	
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ ${LIBS}
@@ -80,5 +80,10 @@ $(SOURCES_TPL_CPP_USERVIEW):
 # templates/content.cpp: templates/content.tmpl templates/content.h
 # 	cppcms_tmpl_cc templates/content.tmpl -o templates/content.cpp
 
-clean:
-	rm -fr dresses *.so *.o ./*/*.o ./view/*.cpp ./view/user/*.cpp cppcms_rundir
+clean: clean_objects clean_tmpl
+
+clean_objects:
+	rm -rf dresses *.so *.o ./*.o ./*/*.o ./*/*/*.o cppcms_rundir
+
+clean_tmpl:
+	rm -rf ./view/*.cpp ./view/user/*.cpp

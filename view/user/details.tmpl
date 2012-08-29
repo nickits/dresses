@@ -4,48 +4,66 @@
 <% template header_more() %>
 	<link href="/css/list.css" type="text/css" rel="stylesheet" />
 	<link href="/css/details.css" type="text/css" rel="stylesheet" />
+	<link href="/css/details.css" type="text/css" rel="stylesheet" />
+	<link href="/css/moowatermark.css" type="text/css" rel="stylesheet" />
+	<link href="/css/mooupload.css" type="text/css" rel="stylesheet" />
+	<link href="/css/editdetails.css" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="/js/mootools-core.js"></script>
+	<script type="text/javascript" src="/js/mootools-more.js"></script>
+	<script type="text/javascript" src="/js/moowatermark.js"></script>
+	<script type="text/javascript" src="/js/MooUpload.js"></script>
+	<script type="text/javascript" src="/js/editdetails.js"></script>
 <% end %>
 
 <% template content_data() %>
-			<div id="details">
-				<div id="item_pictures">
-					<div id="main_picture"><img src="#" alt="" /></div>
-					<div id="all_pictures">
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-					</div>
-				</div>
-				<div id="item_info">
-					<div id="item_title">Item Title</div>				
-					<div id="item_shortdesc">Short description Short description Short description Short description</div>				
-					<div id="item_detaildesc">
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-					</div>	
-					<div id="item_definition">Item Definition</div>
-					<div id="add_to_basket">
-						<div id="price">200.00 lv</div>
-						<div id="btn_to_basket">Add to basket</div>
-					</div>	
-					<div id="share">
-						<div id="fbLike">Like</div>
-					</div>							
-				</div>
+	<div id="edit_details">
+		<div id="edit_details_pictures">
+			<div id="main_picture"><img src="#" alt="" /></div>
+			<div id="all_pictures">
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
+				<div class="thumb_picture"><img src="#" alt="" /></div>					
 			</div>
-			<div id="related">
-				<div class="listtitle">Related items list</div>	
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>						
+		</div>
+		<div id="item_info">
+			<div class="form_controls">
+				<div id="item_title">Item Title</div>				
+				<div id="item_shortdesc">Short description Short description Short description Short description</div>				
+				<div id="item_detaildesc">
+					Detail description Detail description Detail description Detail description Detail description
+					Detail description Detail description Detail description Detail description Detail description
+					Detail description Detail description Detail description Detail description Detail description
+					Detail description Detail description Detail description Detail description Detail description
+				</div>	
+				<div id="item_definition">Item Definition</div>
+				<div id="item_price">200.00 lv</div>
 			</div>
+			<div class="form_buttons">
+				<input type="button" id="item_edit_edit" value="Edit"></input>
+			</div>
+		</div>
+		<div id="edit_details_info">
+			<form method="post" id="item_edit_info" target="_self">
+				<div class="form_controls">
+					<input type="text" id="item_edit_title" name="title"></input>				
+					<textarea rows="2" id="item_edit_shortdesc" name="shortdesc"></textarea>				
+					<textarea rows="10" id="item_edit_detaildesc" name="detaildesc"></textarea>				
+					<input type="text" id="item_edit_definition" name="definition"></input>
+					<input type="text" id="item_edit_price" name="price"></input>
+				</div>
+				<div class="form_buttons">
+					<input type="submit" id="item_edit_save" value="Save"></input>
+					<input type="button" id="item_edit_cancel" value="Cancel"></input>
+				</div>
+			</form>
+			<div id="filecontrol">
+			</div>
+		</div>		
+	</div>
 <% end template %>
 
 

@@ -2,30 +2,94 @@
 <% skin user %>
 <% view useritemslist uses data::list extends usermaster %>
 <% template header_more() %>
-	<link href="/css/list.css" type="text/css" rel="stylesheet" />
+	<link href="/css/products.css" type="text/css" rel="stylesheet" />
 <% end %>
 
 <% template content_data() %>
-			<div id="left">Select criteria</div>
-			<div id="center">
-				<div class="listtitle">Item list</div>	
-				<% foreach item_ in listDetails %>  
-					<% item %>
-						<div class="listitem">
-							<div class="listimg">
-								<a href="<%= item_.url | urlencode %>" >
-									<img src="<%= item_.imgSrc %>" alt="<%= item_.imgAlt %>" />
-								</a>
-							</div>
-							<div class="listdesc">
-								<div class="listprice"><%= item_.price %></div>
-								<div class="listshortdesc"><%= item_.shortDescription %></div>
-							</div>
-						</div>			
-					<% end %>  
-				<% end %>  
-			</div>
-			<div id="right"></div>					
+<div id="products_data">
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<th title="tooltip text">Image</th>
+		<th title="tooltip text">Number</th>
+		<th title="tooltip text">Name</th>
+		<th title="tooltip text">Description</th>
+		<th title="tooltip text">Active</th>
+		<th title="tooltip text">Last Delivery Date</th>
+		<th title="tooltip text">Last Sale Date</th>
+		<th title="tooltip text">Publish Date</th>
+		<th title="tooltip text">Count</th>
+		<th title="tooltip text">Sales</th>
+		<th title="tooltip text">DeliveryPrice</th>
+		<th title="tooltip text">SalePrice</th>
+		<th title="tooltip text">Category</th>
+		<th title="tooltip text">Collection</th>
+	</tr>
+	<tr>
+		<td><div class="product_table_image"><img src="#"></img></div></td>
+		<td>1234567</td>
+		<td><a href="#">Name</a></td>
+		<td><div class="product_table_desc"><a href="#"><a href="#">Description Description Descrip tion Description Desc ription De scription</a></div></td>
+		<td>Yes</td>
+		<td>01/02/03</td>
+		<td>02/03/04</td>
+		<td>03/04/05</td>
+		<td>123</td>
+		<td>12</td>
+		<td>12345.123</td>
+		<td>23456.23</td>
+		<td><a href="#">Category</a></td>
+		<td><a href="#">Collection</a></td>
+	</tr>
+	<tr>
+		<td><div class="product_table_image"><img src="#"></img></div></td>
+		<td>1234567</td>
+		<td><a href="#">Name</a></td>
+		<td><div class="product_table_desc"><a href="#"><a href="#">Description Description Descrip tion Description Desc ription De scription</a></div></td>
+		<td>Yes</td>
+		<td>01/02/03</td>
+		<td>02/03/04</td>
+		<td>03/04/05</td>
+		<td>123</td>
+		<td>12</td>
+		<td>12345.123</td>
+		<td>23456.23</td>
+		<td><a href="#">Category</a></td>
+		<td><a href="#">Collection</a></td>
+	</tr>
+	<tr>
+		<td><div class="product_table_image"><img src="#"></img></div></td>
+		<td>1234567</td>
+		<td><a href="#">Name</a></td>
+		<td><div class="product_table_desc"><a href="#"><a href="#">Description Description Descrip tion Description Desc ription De scription</a></div></td>
+		<td>Yes</td>
+		<td>01/02/03</td>
+		<td>02/03/04</td>
+		<td>03/04/05</td>
+		<td>123</td>
+		<td>12</td>
+		<td>12345.123</td>
+		<td>23456.23</td>
+		<td><a href="#">Category</a></td>
+		<td><a href="#">Collection</a></td>
+	</tr>
+	<tr>
+		<td><div class="product_table_image"><img src="#"></img></div></td>
+		<td>1234567</td>
+		<td><a href="#">Name</a></td>
+		<td><div class="product_table_desc"><a href="#"><a href="#">Description Description Descrip tion Description Desc ription De scription</a></div></td>
+		<td>Yes</td>
+		<td>01/02/03</td>
+		<td>02/03/04</td>
+		<td>03/04/05</td>
+		<td>123</td>
+		<td>12</td>
+		<td>12345.123</td>
+		<td>23456.23</td>
+		<td><a href="#">Category</a></td>
+		<td><a href="#">Collection</a></td>
+	</tr>
+</table>
+</div>
 <% end template %>
 
 

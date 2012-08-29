@@ -2,50 +2,34 @@
 <% skin user %>
 <% view profile uses data::profile extends usermaster %>
 <% template header_more() %>
-	<link href="/css/list.css" type="text/css" rel="stylesheet" />
-	<link href="/css/details.css" type="text/css" rel="stylesheet" />
+	<link href="/css/profile.css" type="text/css" rel="stylesheet" />
 <% end %>
 
 <% template content_data() %>
-			<div id="details">
-				<div id="item_pictures">
-					<div id="main_picture"><img src="#" alt="" /></div>
-					<div id="all_pictures">
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-						<div class="thumb_picture"><img src="#" alt="" /></div>					
-					</div>
-				</div>
-				<div id="item_info">
-					<div id="item_title">Item Title</div>				
-					<div id="item_shortdesc">Short description Short description Short description Short description</div>				
-					<div id="item_detaildesc">
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-						Detail description Detail description Detail description Detail description Detail description
-					</div>	
-					<div id="item_definition">Item Definition</div>
-					<div id="add_to_basket">
-						<div id="price">200.00 lv</div>
-						<div id="btn_to_basket">Add to basket</div>
-					</div>	
-					<div id="share">
-						<div id="fbLike">Like</div>
-					</div>							
-				</div>
-			</div>
-			<div id="related">
-				<div class="listtitle">Related items list</div>	
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>			
-				<div class="listitem"><div class="listimg"><a href="#" ><img src="#" alt="" /></a></div><div class="listdesc"></div></div>						
-			</div>
+<div id="profile_data">
+<form method="post" id="profile_post" target="_self">
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr><td>Client Type</td><td><select name="clientType">
+						<option selected value="person">Person</option>
+						<option value="organization">Organization</option></select></td></tr>
+	<tr><td>User Name</td><td><input type="text" name="username"></input></td></tr>
+	<tr><td>Password</td><td><input type="text" name="password"></input></td></tr>
+	<tr><td>Confirm Password</td><td><input type="text" name="repassword"></input></td></tr>
+	<tr><td>First Name</td><td><input type="text" name="fname"></input></td></tr>
+	<tr><td>Last Name</td><td><input type="text" name="lastName"></input></td></tr>
+	<tr><td>Identity Number</td><td><input type="text" name="identityNumber"></input></td></tr>
+	<tr><td>Country</td><td><input type="text" name="country"></input></td></tr>
+	<tr><td>Town</td><td><input type="text" name="town"></input></td></tr>
+	<tr><td>Zip Code</td><td><input type="text" name="zipCode"></input></td></tr>
+	<tr><td>Address</td><td><input type="text" name="address"></input></td></tr>
+	<tr><td>Phone</td><td><input type="text" name="phone"></input></td></tr>
+	<tr><td>Fax</td><td><input type="text" name="fax"></input></td></tr>
+	<tr><td>Web Site</td><td><input type="text" name="webSite"></input></td></tr>
+	<tr><td>Contact Person</td><td><input type="text" name="contactPerson"></input></td></tr>
+	<tr><td colspan="2"><div class="form_buttons"><input type="submit" value="Save"></input></div></td></tr>
+</table>
+</form>
+</div>
 <% end template %>
 
 
